@@ -17,6 +17,7 @@ services:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: test
       FEED_PATH: ./tmp/feed.v2.test.json.gz
+      QUERY_LIMIT: 10
     entrypoint: "./init.sh"
     restart: always
   db:

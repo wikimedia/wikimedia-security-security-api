@@ -235,6 +235,7 @@ module.exports = (options) => {
         // serve static files from static/
         app.use('/static', express.static(`${__dirname}/static`));
         return app;
-    }).then(createServer);
+    })
+    .then(createServer);
 
 };
