@@ -5,6 +5,7 @@
 	"main": "./app.js",
 	"scripts": {
 		"start": "service-runner",
+		"watch": "nodemon server.js --signal SIGTERM",
 		"test": "npm run lint && PREQ_CONNECT_TIMEOUT=15 mocha",
 		"lint": "eslint --max-warnings 0 --ext .js --ext .json .",
 		"lint:fix": "eslint --fix .",
@@ -52,6 +53,7 @@
 		"mocha": "^5.2.0",
 		"mocha-lcov-reporter": "^1.3.0",
 		"mocha.parallel": "^0.15.6",
+		"nodemon": "^2.0.15",
 		"nyc": "^14.1.1",
 		"openapi-schema-validator": "^3.0.3"
 	}
