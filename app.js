@@ -19,8 +19,7 @@ const path = require('path');
  * @param {Object} options the options to initialise the app with
  * @return {bluebird} the promise resolving to the app object
  */
-function initApp(options) {
-
+async function initApp(options) {
     // the main application object
     const app = express();
 

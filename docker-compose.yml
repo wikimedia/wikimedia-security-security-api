@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  web:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: .pipeline/local.Dockerfile
+    volumes:
+      - ./:/srv/service
+    image: "securityapi:local"
+    ports:
+      - 6927:6927
+    environment:
+      HOST: host.docker.internal
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: test
+    entrypoint: "./init.sh"
+    restart: always
+  db:
+    image: "mariadb"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: test
+    ports:
+      - 3306:3306
