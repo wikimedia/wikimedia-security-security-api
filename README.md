@@ -2,7 +2,7 @@
 
 https://phabricator.wikimedia.org/T290917
 
-This using the template service-runner template (https://github.com/wikimedia/service-template-node)
+This is using the template service-runner template (https://github.com/wikimedia/service-template-node)
 
 
 ## Running the application
