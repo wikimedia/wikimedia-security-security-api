@@ -16,6 +16,7 @@ services:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: test
+      FEED_PATH: ./tmp/feed.v2.test.json.gz
     entrypoint: "./init.sh"
     restart: always
   db:
