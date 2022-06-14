@@ -20,6 +20,8 @@ services:
       QUERY_LIMIT: 10
     entrypoint: "./init.sh"
     restart: always
+    networks:
+      - wmnet
   db:
     image: "mariadb"
     environment:
@@ -27,3 +29,9 @@ services:
       MYSQL_DATABASE: test
     ports:
       - 3306:3306
+    networks:
+      - wmnet
+
+networks:
+  wmnet:
+    name: wikimedia_network
