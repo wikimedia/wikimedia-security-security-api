@@ -24,25 +24,6 @@ const router = sUtil.router();
 });
 
 /**
- * GET /feed/v1/all
- * Fetches all information feed has on ip addresses
- */
- router.get('/all', async (req, res) => {
-    const connection = await feedUtil.createConnection();
-    const offset = req.query.offset || 0;
-    const limit = req.query.limit || process.env.QUERY_LIMIT;
-    return await connection.query(`
-        SELECT * FROM actor_data LIMIT ${limit} OFFSET ${offset};
-    `)
-        .then(async (allResults) => {
-            if (allResults) {
-                return res.json(await feedUtil.processActorResults(connection, allResults));
-            }
-            return res.status(404).end('No data found');
-        });
-});
-
-/**
  * GET /feed/v1/:ip
  * Fetches information feed has on an ip
  */
