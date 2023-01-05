@@ -31,7 +31,7 @@ router.get('/ip/:ip', async (req, res) => {
     const connection = await feedUtil.createConnection();
     return await connection.query('SELECT * FROM actor_data WHERE ip = ? LIMIT 1;', req.params.ip)
         .then(async (allResults) => {
-            if (allResults) {
+            if (allResults.length) {
                 return res.json(await feedUtil.processActorResults(connection, allResults));
             }
             return res.status(404).end(`No data found for ${req.params.ip}`);
