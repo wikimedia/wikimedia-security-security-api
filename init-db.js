@@ -19,6 +19,7 @@ async function getConnection() {
 async function addTables() {
     const connection = await getConnection();
     const schema = fs.readFileSync('./schema.sql', 'utf8');
+    await connection.query('DROP TABLE actor_data;');
     await connection.query(schema);
     connection.end();
 }

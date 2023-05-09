@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS actor_data (
    location_country VARBINARY(32),
    -- 0 = 'UNKNOWN' ,1 = 'CALLBACK_PROXY', 2 = 'GEO_MISMATCH', 3 = 'LOGIN_BRUTEFORCE', 4 = 'TUNNEL', 5 = 'WEB_SCRAPING'
    risks SET('0','1','2','3','4','5'),
+   expiry INT DEFAULT UNIX_TIMESTAMP( DATE_ADD( NOW(), INTERVAL 3 DAY) ),
    PRIMARY KEY (pkid)
 );
 
