@@ -1,3 +1,5 @@
+security-api has been renamed to ipoid. Development here has been discontinued. See the new repository at https://gerrit.wikimedia.org/r/admin/repos/mediawiki/services/ipoid
+
 # Security API
 
 https://phabricator.wikimedia.org/T290917
